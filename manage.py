@@ -1,2 +1,3 @@
 def runserver():
-  print("Server running successfully")
+  while True:
+    print("Tests")
