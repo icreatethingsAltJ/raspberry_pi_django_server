@@ -1,0 +1,15 @@
+name: Run Server
+on: [push]
+jobs:
+   setup-env:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: setup-python
+          uses: actions/setup-python@v3.1.2
+        - name: install-django
+          run: pip install django djangorestframework
+        - name: run-django
+          run: cd ${{ github.workspace }} && python manage.py runserver
+   
+   
